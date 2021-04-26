@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MUCAPI</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui container">
+    <div class="ui inverted top fixed menu">
+        <div class="item active" onclick="changePage('uploadContainer')">
+            <b>MUC-API</b>
+        </div>
+        <div class="item" onclick="changePage('databaseContainer')">
+            <d>MAPS</d>
+        </div>
+        <div class="right menu">
+            <div class="item github">
+                <a href="https://github.com/foxglen/FYP-API"/>
+                Github
+                <i class="github icon">
+                </i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui container uploadContainer page activePage" style="background-color: white;">
+    <div class="ui center aligned equal width grid">
+        <div class="ui column">
+            <h4>UPLOAD .OSM FILE</h4>
+            <input type="file" name="osmFile" id="uploadFile" class="ui button"/>
+            <button class="ui labeled icon button playbackButton" id="uploadButton">
+                <i class="upload icon"></i>
+                <label>UPLOAD FILE</label>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="ui container databaseContainer page inactivePage" style="background-color: white;">
+    <div class="ui center aligned equal width grid">
+        <div class="ui column">
+            <div>
+                <h4 class="databaseInfo"></h4>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="script/index.js"></script>
+</html>

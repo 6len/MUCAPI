@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    compile 'org.postgresql:postgresql:42.2.4.jre7'
+    compile "com.sparkjava:spark-core:2.7.2"
+    compile group: 'org.slf4j', name:'slf4j-api', version: '1.7.2'
+    compile group: 'ch.qos.logback', name:'logback-classic', version: '1.0.9'
+    compile group: 'ch.qos.logback', name:'logback-core', version: '1.0.9'
+    compile group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+}
+
+task RunServer(type:JavaExec) {
+    mainClassName = 'RunServer'
+    main = 'RunServer'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+applicationName = "mucapi"
+task stage(dependsOn: ['build', 'clean', 'installDist'])
+build.mustRunAfter clean
